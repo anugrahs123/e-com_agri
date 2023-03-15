@@ -1,0 +1,187 @@
+.aboutPage {
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 0px 30px;
+
+    &__blog {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5em;
+
+        &__item {
+            text-align: center;
+
+            img {
+                width: 100%;
+                transition: 0.5s;
+
+                &:hover {
+                    transform: translateY(-10px);
+                }
+            }
+
+            a {
+                text-decoration: none;
+
+                h3 {
+                    color: var(--text-dark-color);
+                    font-size: 23px;
+                    margin-top: 1em;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: var(--primary-color);
+                    }
+                }
+            }
+
+            p {
+                margin-top: 0.5em;
+                color: var(--text-light-color);
+                line-height: 28px;
+                font-size: 17px;
+            }
+        }
+    }
+
+    &__features {
+        margin-top: 7em;
+
+        &__sub-title {
+            text-align: center;
+            font-family: var(--logo-font-family);
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        &__title {
+            text-align: center;
+            font-family: var(--title-font-family);
+            font-size: 32px;
+            color: var(--text-dark-color);
+            margin-top: 5px;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: 26% auto 26%;
+            gap: 4em;
+            align-items: center;
+            margin-top: 2em;
+
+            &__middle {
+                position: relative;
+
+                &__mainImg {
+                    width: 100%;
+                }
+
+                &__qualityImg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 180px;
+                    height: 180px;
+                }
+            }
+
+            &__item {
+                display: flex;
+                align-items: center;
+                gap: 1.5em;
+                margin-bottom: 3em;
+
+                img {
+                    transition: 0.5s;
+
+                    &:hover {
+                        transform: scale(0.8);
+                    }
+                }
+
+                &__content {
+                    h3 {
+                        font-family: var(--title-font-family);
+                        color: var(--text-dark-color);
+                    }
+
+                    p {
+                        margin-top: 0.5em;
+                        color: var(--text-light-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .aboutPage {
+        &__features {
+            &__list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                &__middle {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .aboutPage {
+        &__blog {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__features {
+            text-align: center;
+
+            &__list {
+                display: block;
+
+                &__item {
+                    display: grid;
+
+                    img {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutPage {
+        padding: 0px 20px;
+
+        &__blog {
+            display: block;
+
+            &__item {
+                margin-bottom: 3em;
+
+                a {
+                    h3 {
+                        font-size: 20px;
+                        margin-top: 0.6em;
+                    }
+                }
+
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        &__features {
+            margin-top: 5em;
+        }
+    }
+}
